@@ -21,7 +21,15 @@ chunk = []
 current_size = 0
 index = 1
 
-for line in lines:
+prefix = "0403258372"
+
+vLines = []
+
+for i in range(1000):
+    vLines.append(f"{prefix}{i:03d}")
+    print(f"{prefix}{i:03d}")
+
+for line in vLines:
     line_size = len(line) + 1
 
     if current_size + line_size > MAX_CHARS:
@@ -54,3 +62,4 @@ if chunk:
     )
 
 print(f"\n{index} QR code(s) generated in folder: {OUTPUT_FOLDER}")
+
